@@ -30,7 +30,7 @@ namespace PRG282_Project2._0
 		private void button3_Click(object sender, EventArgs e)
 		{
 			this.Close();
-			UpdateAnsDelete update = new UpdateAnsDelete();
+			UpdateAndDelete update = new UpdateAndDelete();
 			update.Show();
 		}
 
@@ -50,8 +50,6 @@ namespace PRG282_Project2._0
 			textBox5.Text = averageAge.ToString("0.00");
 		}
 
-		private void textBox6_TextChanged(object sender, EventArgs e) 
-		{
 
 		}
 
@@ -59,38 +57,11 @@ namespace PRG282_Project2._0
 		{
 
 		}
-        private void btnValidatePassword_Click(object sender, EventArgs e)
-        {
-            if (PasswordTextBox.Text == requiredPassword)
-            {
-                MessageBox.Show("Password validated successfully!", "Access Granted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Call SaveSummaryToFile with current student data after successful validation
-                if (int.TryParse(textBox6.Text, out int totalStudents) && double.TryParse(textBox5.Text, out double averageAge))
-                {
-                    SaveSummaryToFile(totalStudents, averageAge);
-                }
-                else
-                {
-                    MessageBox.Show("Please calculate the total students and average age first.", "Data Missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Incorrect password. Please try again.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                // Optionally clear the password textbox for retry
-                PasswordTextBox.Clear();
-                PasswordTextBox.Focus();
-            }
-        }
-        private void SaveSummaryToFile(int totalStudents, double averageAge)
-        {
-            string summaryText = $"Summary Report\n\n" +
-                                 $"Total Students: {totalStudents}\n" +
-                                 $"Average Age: {averageAge:0.00}\n";
-            string filePath = "summary.txt";
-            string directory = Path.GetDirectoryName(filePath);
+		private void SaveSummaryToFile(int totalStudents, double averageAge)
+		{
+			string summaryText = $"Summary Report\n\n" +
+								 $"Total Students: {totalStudents}\n" +
+								 $"Average Age: {averageAge:0.00}\n";
 
             try
             {

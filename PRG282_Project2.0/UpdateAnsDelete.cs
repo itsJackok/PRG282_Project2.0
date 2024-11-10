@@ -10,16 +10,17 @@ using System.Windows.Forms;
 
 namespace PRG282_Project2._0
 {
-	public partial class UpdateAnsDelete : Form
+	public partial class UpdateAndDelete : Form
 	{
-		public UpdateAnsDelete()
+		public UpdateAndDelete()
 		{
 			InitializeComponent();
 		}
 		DataHandler handler = new DataHandler();
 		Student student = new Student();
 
-		private void button1_Click(object sender, EventArgs e)//populate the student list on 
+		//This is populating the listview from the data captured from the textboxes
+		private void ShowStudent_Click(object sender, EventArgs e)
 		{
 			listView1.Items.Clear(); 
 
@@ -34,15 +35,10 @@ namespace PRG282_Project2._0
 				listView1.Items.Add(item);  
 			}
 		}
-
-		private void UpdateAnsDelete_Load(object sender, EventArgs e)
+		//When a certain cell if clicked on the Listview it will popluate the textboxes
+		private void listView1_MouseClick(object sender, MouseEventArgs e) 
 		{
-			
-		}
-
-		private void listView1_MouseClick(object sender, MouseEventArgs e) //populate the student lisst on textboxes
-		{
-			if (listView1.SelectedItems.Count > 0)
+			if (listView1.SelectedItems.Count > 0) //exception tester
 			{
 				string selectedStudentID = listView1.SelectedItems[0].SubItems[0].Text;
 
@@ -70,11 +66,7 @@ namespace PRG282_Project2._0
 			}
 		}
 
-		private void Back(object sender, EventArgs e)
-		{
-
-		}
-
+		//This is the back button back to the search form /search function
 		private void button2_Click(object sender, EventArgs e)
 		{
 			this.Close();
@@ -82,9 +74,10 @@ namespace PRG282_Project2._0
 			search.Show();
 		}
 
-		private void button4_Click(object sender, EventArgs e) //delete function
+		//This is the delete function that delets the student details from the listview runs with the click of the Delete button
+		private void Delete_Click(object sender, EventArgs e) 
 		{
-			if (student != null)
+			if (student != null) //Exception tester
 			{
 				List<Student> students = handler.read();
 
@@ -95,7 +88,7 @@ namespace PRG282_Project2._0
 					handler.write(students);  
 					MessageBox.Show("Student record deleted successfully.");
 
-					button1_Click(sender, e);
+					ShowStudent_Click(sender, e);
 				}
 			}
 			else
@@ -104,10 +97,10 @@ namespace PRG282_Project2._0
 			}
 		}
 	
-
-		private void button3_Click(object sender, EventArgs e) //The Update function
+		//This is the update function where the info of the student is updated to the listviewwhile pressing the update
+		private void Update_Click(object sender, EventArgs e) 
 		{
-			if (student != null)
+			if (student != null) //exception tester
 			{
 				student.Name = textBox2.Text;
 
@@ -127,7 +120,7 @@ namespace PRG282_Project2._0
 
 				var studentToUpdate = students.FirstOrDefault(s => s.StudentID == student.StudentID);
 
-				if (studentToUpdate != null)
+				if (studentToUpdate != null) //tested?
 				{
 					studentToUpdate.Name = student.Name;
 					studentToUpdate.Age = student.Age;
@@ -137,7 +130,7 @@ namespace PRG282_Project2._0
 
 					MessageBox.Show("Student details updated successfully!");
 
-					button1_Click(sender, e); 
+					ShowStudent_Click(sender, e); 
 				}
 				else
 				{
@@ -150,21 +143,20 @@ namespace PRG282_Project2._0
 			}
 		}
 
-		private void label3_Click(object sender, EventArgs e)
-		{
-
-		}
-
+	
+		//Exit Button
 		private void button5_Click(object sender, EventArgs e)
 		{
 			this.Close();
 		}
-
-		private void button6_Click(object sender, EventArgs e)
+		// This is showing the avearge form of all of the students in the listview
+		private void ShowAverage_Click(object sender, EventArgs e)
 		{
 			this.Hide();
 			Averages averages = new Averages();
 			averages.Show();
 		}
-	}
+
+      
+    }
 }

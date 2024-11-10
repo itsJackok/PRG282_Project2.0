@@ -12,8 +12,8 @@ using System.Windows.Forms;
 namespace PRG282_Project2._0
 {
 	public partial class AddStudents : Form
-	{
-		public AddStudents()
+    {    
+            public AddStudents()
 		{
 			InitializeComponent();
 		}
@@ -25,7 +25,7 @@ namespace PRG282_Project2._0
 			try
 			{
 				if (int.TryParse(textBox1.Text, out int studentID))
-				{
+				{ 
 					student.StudentID = studentID;
 				}
 				else

@@ -86,7 +86,7 @@ namespace PRG282_Project2._0
 		private void button3_Click(object sender, EventArgs e)
 		{
 			this.Close();
-			UpdateAnsDelete update = new UpdateAnsDelete();
+			UpdateAndDelete update = new UpdateAndDelete();
 			update.Show();
 		}
 
