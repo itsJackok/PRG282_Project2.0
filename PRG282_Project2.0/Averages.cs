@@ -15,7 +15,7 @@ namespace PRG282_Project2._0
 {
 	public partial class Averages : Form
 	{
-        private const string requiredPassword = "SM2024";
+        
 		public Averages()
 		{
 			InitializeComponent();
@@ -51,21 +51,14 @@ namespace PRG282_Project2._0
 			textBox5.Text = averageAge.ToString("0.00");
 		}
 
-		private void textBox6_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-
-		private void textBox5_TextChanged(object sender, EventArgs e) 
-		{
-
-		}
-		private void SaveSummaryToFile(int totalStudents, double averageAge)
-		{
-			string summaryText = $"Summary Report\n\n" +
-								 $"Total Students: {totalStudents}\n" +
-								 $"Average Age: {averageAge:0.00}\n";
+        
+        private void SaveSummaryToFile(int totalStudents, double averageAge)
+        {
+            string summaryText = $"Summary Report\n\n" +
+                                 $"Total Students: {totalStudents}\n" +
+                                 $"Average Age: {averageAge:0.00}\n";
+            string filePath = "summary.txt";
+            string directory = Path.GetDirectoryName(filePath);
 
 			string filePath = "summary.txt";
 			string directory = Path.GetDirectoryName(filePath);

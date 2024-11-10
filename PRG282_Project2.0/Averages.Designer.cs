@@ -44,7 +44,7 @@
 			this.textBox5.Name = "textBox5";
 			this.textBox5.Size = new System.Drawing.Size(100, 22);
 			this.textBox5.TabIndex = 41;
-			this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+		
 			// 
 			// textBox6
 			// 
@@ -52,7 +52,7 @@
 			this.textBox6.Name = "textBox6";
 			this.textBox6.Size = new System.Drawing.Size(100, 22);
 			this.textBox6.TabIndex = 40;
-			this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+			
 			// 
 			// label5
 			// 
@@ -146,8 +146,5 @@
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox PasswordTextBox;
-        private System.Windows.Forms.Label PasswordLabel;
-        private System.Windows.Forms.Button passwordbtn;
     }
 }
