@@ -30,7 +30,7 @@ namespace PRG282_Project2._0
 		private void button3_Click(object sender, EventArgs e)
 		{
 			this.Close();
-			UpdateAnsDelete update = new UpdateAnsDelete();
+			UpdateAndDelete update = new UpdateAndDelete();
 			update.Show();
 		}
 
@@ -50,8 +50,6 @@ namespace PRG282_Project2._0
 			textBox5.Text = averageAge.ToString("0.00");
 		}
 
-		private void textBox6_TextChanged(object sender, EventArgs e) 
-		{
 
 		}
 
