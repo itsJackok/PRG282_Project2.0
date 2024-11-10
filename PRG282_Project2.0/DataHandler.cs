@@ -10,12 +10,12 @@ using System.Windows.Forms;
 namespace PRG282_Project2._0
 {
 	internal class DataHandler
-	{
+	{ //Creating a path to set the textfile
 		string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "data", "students.txt");
 		public List<string> container = new List<string>();
 
-
-		public List<Student> read()
+        //Reading onto the Student.txt using streamReader
+        public List<Student> read()
 		{
 			List<Student> students = new List<Student>();
 
@@ -43,15 +43,16 @@ namespace PRG282_Project2._0
 			}
 			else
 			{
-				Console.WriteLine("The file does not exist.");
+				Console.WriteLine("The file does not exist."); //exception catcher
 			}
 
 			return students;  
 		}
 
+		//Writing onto the Student.txt using streamWriter
 		public void write(List<Student> students)
 		{
-			try
+			try //exception catcher
 			{
 				using (StreamWriter writer = new StreamWriter(path))
 				{
@@ -68,9 +69,10 @@ namespace PRG282_Project2._0
 			}
 		}
 
+		//Inserting the information of the students by using the did above StreamWriter 
 		public void insert(int studentID, string name, int age, string courseID)
 		{
-			try
+			try //exception catcher
 			{
 				using (StreamWriter writer = new StreamWriter(path, true)) 
 				{
@@ -85,6 +87,7 @@ namespace PRG282_Project2._0
 
 		}
 
+		//This is the search function that can be located at the search button that searches on the datatable which is displayed on the listview
 		public DataTable searchStudent(int studentID)
 		{
 			DataTable resultTable = new DataTable();
@@ -95,7 +98,7 @@ namespace PRG282_Project2._0
 
 			string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "data", "students.txt");
 
-			if (!File.Exists(filePath))
+			if (!File.Exists(filePath)) //exception catcher
 			{
 				throw new FileNotFoundException("The students file was not found.");
 			}
@@ -104,7 +107,7 @@ namespace PRG282_Project2._0
 			{
 				var fields = line.Split(',');
 
-				if (fields.Length != 4) continue;
+				if (fields.Length != 4) continue; //this is an exception handler for if its exciding the amount of info needed
 
 				if (int.TryParse(fields[0], out int parsedID) && parsedID == studentID)
 				{
@@ -115,6 +118,7 @@ namespace PRG282_Project2._0
 			return resultTable;
 		}
 
+		//This is a function that helps us save the data onto the student.txt
 		public void save()
 		{
 			string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "data", "students.txt");
