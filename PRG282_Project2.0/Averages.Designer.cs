@@ -74,42 +74,46 @@
 			// 
 			// button1
 			// 
+			this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.button1.Location = new System.Drawing.Point(342, 63);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(69, 23);
 			this.button1.TabIndex = 42;
 			this.button1.Text = "search";
-			this.button1.UseVisualStyleBackColor = true;
+			this.button1.UseVisualStyleBackColor = false;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// button2
 			// 
+			this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.button2.Location = new System.Drawing.Point(342, 109);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(75, 23);
 			this.button2.TabIndex = 43;
 			this.button2.Text = "Search";
-			this.button2.UseVisualStyleBackColor = true;
+			this.button2.UseVisualStyleBackColor = false;
 			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
 			// button3
 			// 
+			this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.button3.Location = new System.Drawing.Point(221, 184);
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(75, 23);
 			this.button3.TabIndex = 44;
 			this.button3.Text = "Back";
-			this.button3.UseVisualStyleBackColor = true;
+			this.button3.UseVisualStyleBackColor = false;
 			this.button3.Click += new System.EventHandler(this.button3_Click);
 			// 
 			// button4
 			// 
+			this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.button4.Location = new System.Drawing.Point(342, 184);
 			this.button4.Name = "button4";
 			this.button4.Size = new System.Drawing.Size(75, 23);
 			this.button4.TabIndex = 45;
 			this.button4.Text = "Exit";
-			this.button4.UseVisualStyleBackColor = true;
+			this.button4.UseVisualStyleBackColor = false;
 			this.button4.Click += new System.EventHandler(this.button4_Click);
 			// 
 			// Averages

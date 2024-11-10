@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,8 +51,11 @@ namespace PRG282_Project2._0
 			textBox5.Text = averageAge.ToString("0.00");
 		}
 
+		private void textBox6_TextChanged(object sender, EventArgs e)
+		{
 
 		}
+
 
 		private void textBox5_TextChanged(object sender, EventArgs e) 
 		{
@@ -63,7 +67,10 @@ namespace PRG282_Project2._0
 								 $"Total Students: {totalStudents}\n" +
 								 $"Average Age: {averageAge:0.00}\n";
 
-            try
+			string filePath = "summary.txt";
+			string directory = Path.GetDirectoryName(filePath);
+
+			try
             {
                 // Ensures directory exists; if not, creates it
                 if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))

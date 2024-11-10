@@ -56,16 +56,18 @@
 			// 
 			// button1
 			// 
+			this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.button1.Location = new System.Drawing.Point(357, 54);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(71, 24);
 			this.button1.TabIndex = 5;
 			this.button1.Text = "Search";
-			this.button1.UseVisualStyleBackColor = true;
+			this.button1.UseVisualStyleBackColor = false;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// dataGridView1
 			// 
+			this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Location = new System.Drawing.Point(54, 110);
 			this.dataGridView1.Name = "dataGridView1";
@@ -77,32 +79,35 @@
 			// 
 			// button2
 			// 
+			this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.button2.Location = new System.Drawing.Point(483, 389);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(71, 24);
 			this.button2.TabIndex = 8;
 			this.button2.Text = "Back";
-			this.button2.UseVisualStyleBackColor = true;
+			this.button2.UseVisualStyleBackColor = false;
 			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
 			// button3
 			// 
+			this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.button3.Location = new System.Drawing.Point(54, 389);
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(78, 24);
 			this.button3.TabIndex = 27;
 			this.button3.Text = "Update";
-			this.button3.UseVisualStyleBackColor = true;
+			this.button3.UseVisualStyleBackColor = false;
 			this.button3.Click += new System.EventHandler(this.button3_Click);
 			// 
 			// button4
 			// 
+			this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.button4.Location = new System.Drawing.Point(656, 389);
 			this.button4.Name = "button4";
 			this.button4.Size = new System.Drawing.Size(71, 24);
 			this.button4.TabIndex = 28;
 			this.button4.Text = "Exit";
-			this.button4.UseVisualStyleBackColor = true;
+			this.button4.UseVisualStyleBackColor = false;
 			this.button4.Click += new System.EventHandler(this.button4_Click);
 			// 
 			// Search

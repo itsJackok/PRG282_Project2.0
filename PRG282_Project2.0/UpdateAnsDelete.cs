@@ -22,18 +22,9 @@ namespace PRG282_Project2._0
 		//This is populating the listview from the data captured from the textboxes
 		private void ShowStudent_Click(object sender, EventArgs e)
 		{
-			listView1.Items.Clear(); 
-
-			List<Student> students = handler.read();
-
-			foreach (var student in students)
-			{
-				ListViewItem item = new ListViewItem(student.StudentID.ToString()); 
-				item.SubItems.Add(student.Name);
-				item.SubItems.Add(student.Age.ToString());
-				item.SubItems.Add(student.CourseID);  
-				listView1.Items.Add(item);  
-			}
+			dataGridView1.DataSource = null; // Clear any existing data
+			List<Student> students = handler.read(); // Read all student data
+			dataGridView1.DataSource = students;
 		}
 		//When a certain cell if clicked on the Listview it will popluate the textboxes
 		private void listView1_MouseClick(object sender, MouseEventArgs e) 
@@ -157,6 +148,26 @@ namespace PRG282_Project2._0
 			averages.Show();
 		}
 
-      
-    }
+		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex >= 0) // Check if a row is actually selected
+			{
+				DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+				student = new Student
+				{
+					StudentID = int.Parse(row.Cells["StudentID"].Value.ToString()),
+					Name = row.Cells["Name"].Value.ToString(),
+					Age = int.Parse(row.Cells["Age"].Value.ToString()),
+					CourseID = row.Cells["CourseID"].Value.ToString()
+				};
+
+				// Populate text boxes with the selected student's details
+				textBox1.Text = student.StudentID.ToString();
+				textBox2.Text = student.Name;
+				textBox3.Text = student.Age.ToString();
+				textBox4.Text = student.CourseID;
+			}
+		
+		}
+	}
 }
