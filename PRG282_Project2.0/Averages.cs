@@ -14,7 +14,7 @@ namespace PRG282_Project2._0
 {
 	public partial class Averages : Form
 	{
-        private const string requiredPassword = "SM2024";
+        
 		public Averages()
 		{
 			InitializeComponent();
@@ -59,30 +59,7 @@ namespace PRG282_Project2._0
 		{
 
 		}
-        private void btnValidatePassword_Click(object sender, EventArgs e)
-        {
-            if (PasswordTextBox.Text == requiredPassword)
-            {
-                MessageBox.Show("Password validated successfully!", "Access Granted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Call SaveSummaryToFile with current student data after successful validation
-                if (int.TryParse(textBox6.Text, out int totalStudents) && double.TryParse(textBox5.Text, out double averageAge))
-                {
-                    SaveSummaryToFile(totalStudents, averageAge);
-                }
-                else
-                {
-                    MessageBox.Show("Please calculate the total students and average age first.", "Data Missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Incorrect password. Please try again.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                // Optionally clear the password textbox for retry
-                PasswordTextBox.Clear();
-                PasswordTextBox.Focus();
-            }
+       
         }
         private void SaveSummaryToFile(int totalStudents, double averageAge)
         {
