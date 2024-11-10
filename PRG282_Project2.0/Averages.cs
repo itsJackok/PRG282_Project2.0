@@ -60,8 +60,7 @@ namespace PRG282_Project2._0
             string filePath = "summary.txt";
             string directory = Path.GetDirectoryName(filePath);
 
-			string filePath = "summary.txt";
-			string directory = Path.GetDirectoryName(filePath);
+			
 
 			try
             {
