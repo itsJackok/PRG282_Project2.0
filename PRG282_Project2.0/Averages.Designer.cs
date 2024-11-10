@@ -44,15 +44,13 @@
 			this.textBox5.Name = "textBox5";
 			this.textBox5.Size = new System.Drawing.Size(100, 22);
 			this.textBox5.TabIndex = 41;
-		
-			// 
+						// 
 			// textBox6
 			// 
 			this.textBox6.Location = new System.Drawing.Point(221, 63);
 			this.textBox6.Name = "textBox6";
 			this.textBox6.Size = new System.Drawing.Size(100, 22);
 			this.textBox6.TabIndex = 40;
-			
 			// 
 			// label5
 			// 
@@ -146,5 +144,5 @@
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button button4;
-    }
+	}
 }
