@@ -89,21 +89,23 @@ namespace PRG282_Project2._0
             string summaryText = $"Summary Report\n\n" +
                                  $"Total Students: {totalStudents}\n" +
                                  $"Average Age: {averageAge:0.00}\n";
+            string filePath = "summary.txt";
+            string directory = Path.GetDirectoryName(filePath);
 
             try
             {
-                
-                string filePath = "summary.txt";
-                string directory = Path.GetDirectoryName(filePath);
-
-                if (!Directory.Exists(directory))
+                // Ensures directory exists; if not, creates it
+                if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
                 {
-                    MessageBox.Show("Directory does not exist. Please check the path.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    Directory.CreateDirectory(directory);
                 }
 
-                
-                File.WriteAllText(filePath, summaryText);
+                // Uses StreamWriter to write the summary text to the file
+                using (StreamWriter writer = new StreamWriter(filePath, false)) // `false` to overwrite existing content
+                {
+                    writer.Write(summaryText);
+                }
+
                 MessageBox.Show("Summary saved successfully to summary.txt", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             // Checks if users have permission to access the file
@@ -121,7 +123,7 @@ namespace PRG282_Project2._0
             {
                 MessageBox.Show("The file path is too long. Please use a shorter path.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            // Checks IO Exception erros
+            // Checks IO Exception errors
             catch (IOException ex)
             {
                 MessageBox.Show($"An I/O error occurred while saving the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -129,10 +131,9 @@ namespace PRG282_Project2._0
             // Checks for unknown/unexpected errors
             catch (Exception ex)
             {
-                MessageBox.Show($"An unexpected/unkown error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An unexpected/unknown error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-      
     }
 }
