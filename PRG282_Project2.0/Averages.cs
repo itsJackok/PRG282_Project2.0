@@ -50,15 +50,7 @@ namespace PRG282_Project2._0
 			textBox5.Text = averageAge.ToString("0.00");
 		}
 
-
-		}
-
-		private void textBox5_TextChanged(object sender, EventArgs e) 
-		{
-
-		}
-       
-        }
+        
         private void SaveSummaryToFile(int totalStudents, double averageAge)
         {
             string summaryText = $"Summary Report\n\n" +
